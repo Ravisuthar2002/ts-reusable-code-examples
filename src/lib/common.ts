@@ -31,3 +31,23 @@ export function sortLinkedList(list: LinkedList) {
         }
     }
 }
+
+interface Sortable {
+    length: number;
+    compare: (leftIndex: number, rightIndex: number) => boolean;
+    swap: (leftIndex: number, rightIndex: number) => void;
+}
+
+export function sort(data: Sortable) {
+    if(data.length < 2) {
+        return;
+    }
+    
+    for(let i = 0; i < data.length; i++) {
+        for(let j = 0; j < data.length - 1; j++) {
+            if(data.compare(j, j+1)) {
+                data.swap(j, j+1);
+            }
+        }
+    }
+}
