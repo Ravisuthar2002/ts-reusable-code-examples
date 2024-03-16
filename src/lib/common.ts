@@ -1,4 +1,4 @@
-import { LinkedList } from "./LinkedList";
+import { LinkedList } from "./classes/LinkedList";
 
 export function sortNumbers(numbers: number[]) {
     if(numbers.length < 2) {

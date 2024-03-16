@@ -1,22 +1,6 @@
-import { LinkedList } from "./lib/LinkedList";
+import { parseStudentsData, parseTodoData, readCsv } from "./lib/classes/composition/csv-helper";
+import { CSV_FILES_PATH } from "./utilities/constants";
 
-import { sort } from "./lib/common";
-import { LinkedListSortable } from "./lib/sort-classes/LinkedListSortable";
-import { NumbersSortable } from "./lib/sort-classes/NumbersSortable";
+console.log(parseStudentsData(readCsv(CSV_FILES_PATH+"/student-data.csv")));
 
-
-let list = new LinkedList([3, 0, -2, 4, 91]);
-let numbers = [5, 6, 8, 1, 0, -4];
-console.log("==== NUMBERS SORTING ====")
-console.log("BEFORE ---")
-console.log(numbers);
-sort(new NumbersSortable(numbers))
-console.log("AFTER ---")
-console.log(numbers);
-
-console.log("==== LINKED LIST SORTING ====");
-console.log("BEFORE ---")
-list.print();
-sort(new LinkedListSortable(list));
-console.log("AFTER ---")
-list.print();
+console.log(parseTodoData(readCsv(CSV_FILES_PATH+"/todo-data.csv")));
